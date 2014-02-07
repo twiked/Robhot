@@ -7,6 +7,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$age = (int) $_POST['age'];
 	$mail = $_POST['mail'];
 
+	// Check attributes validity
+	if(True) {
+		$valid_data = True;
+	}
+
 	$stmt = $db->prepare("INSERT INTO registered_user(	firstname, lastname, age, email) VALUES (?, ?, ?, ?)");
 	$stmt->bindValue(1, $name, PDO::PARAM_STR);
 	$stmt->bindValue(2, $surname, PDO::PARAM_STR);
@@ -28,7 +33,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.block label { 
+	display: inline-block; width: 100px; text-align: right;
+}
 
+.green {
+	color:green;
+	font-weight:bold;
+}
+</style>
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -48,16 +62,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<li><a href="./products.php">Produits</a></li>
 					<li class="active"><a href="./register.php">Inscription</a></li>
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="well">
+			<?php if($valid_data) echo "<span class=\"green\">Successfully registered</span>";?>
 			<form action="./register.php" method="post">
-				Prénom: <input type="text" name="name"><br>
-				Nom: <input type="text" name="surname"><br>
-				Age: <input type="text" name="age"><br>
-				Email: <input type="text" name="mail"><br>
+				<div class="block"><label>First Name:</label> 	<input type="text" name="name" required autofocus></div>
+				<div class="block"><label>Last Name:</label>	<input type="text" name="surname" required></div>
+				<div class="block"><label>Age:</label>			<input type="number" name="age" min="13" max="120" required></div>
+				<div class="block"><label>Email:</label>		<input type="email" name="mail" required></div>
 				<input type="submit" value="S'enregistrer">
 			</form>
 		</div>
