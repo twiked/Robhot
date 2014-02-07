@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RobotWithMe - About us </title>
+    <title>RobotWithMe - Credits </title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
 
-    <link rel="stylesheet" type="text/css" href="./css/jcarousel.basic.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .block label { display: inline-block; width: 100px; text-align: right;}
