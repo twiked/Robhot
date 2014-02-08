@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 		<div class="container">
 			<div class="well">
-				<?php if($valid_data) echo "<span class=\"green\">Successfully registered</span>";?>
+				<?php if($valid_data) echo "<div class=\"alert alert-success\"><strong>Successfully registered !</strong></div>";?>
 				<form action="./register.php" method="post">
 					<div class="block"><label>First Name:</label> 	<input type="text" name="name" required autofocus></div>
 					<div class="block"><label>Last Name:</label>	<input type="text" name="surname" required></div>
