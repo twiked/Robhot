@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {
-
+	$valid_data = False;
 }
 ?>
 
@@ -40,6 +40,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			margin-bottom: 8px;
 		}
 
+		.block input{
+			width: 250px;
+		}
+
 		.block label { 
 			display: inline-block; width: 100px; text-align: right;
 		}
@@ -47,6 +51,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		.green {
 			color:green;
 			font-weight:bold;
+		}
+		.block .error {
+			display: inline;
+			color: red;
 		}
 	</style>
 </head>
@@ -73,9 +81,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			</div>
 		</div>
 		<div class="container">
+			<div class="alert-success" <?php if(!$valid_data) {echo "style=\"display: none;\""; } ?>><strong>Successfully registered !</strong></div>
+			<div id="error" class="alert-success" style="display: none;"><span></span></div>
 			<div class="well">
-				<?php if($valid_data) echo "<div class=\"alert alert-success\"><strong>Successfully registered !</strong></div>";?>
-				<form action="./register.php" method="post">
+				<form id="register" action="./register.php" method="post">
 					<div class="block"><label>First Name:</label> 	<input type="text" name="name" required autofocus></div>
 					<div class="block"><label>Last Name:</label>	<input type="text" name="surname" required></div>
 					<div class="block"><label>Age:</label>			<input type="number" name="age" min="13" max="120" required></div>
@@ -93,7 +102,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 	</div>
 
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="./js/additional-methods.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+		    $("#register").validate({
+		    	rules: {
+		    		name: {
+		    			lettersonly: true
+		    		},
+		    		surname: {
+		    			lettersonly: true
+		    		}
+		    	}
+		    });
+		});
+	</script>
 </body>
 </html>
