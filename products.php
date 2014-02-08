@@ -47,6 +47,7 @@
                     <img class="center" src="http://2.bp.blogspot.com/-2T-jEJdK6RM/T3KZBdisH3I/AAAAAAAAGMc/CGa6EtWunB0/s1600/1%2B(2).jpg" width=200 height=200>
                 </div>
                 <div class="col-md-4">
+                    <h1>Lorem</h1>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
