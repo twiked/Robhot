@@ -24,6 +24,13 @@ $stmt->execute();
     .center {
         text-align: center;
     }
+
+    #header {
+        width: 30px;
+        position: absolute;
+        right: 0px;
+        margin: 5px;
+    }
     </style>
 </head>
 <body>
@@ -48,6 +55,9 @@ $stmt->execute();
                 </div>
             </div>
         </div>
+        <div id="header">
+            
+        </div>
         <div class="container">
             <?php 
             while($row = $stmt->fetch()) { ?> 
@@ -61,6 +71,8 @@ $stmt->execute();
                 </div>
                 <div class="col-md-4 center">
                     <h1><?php echo $row->price ?> BTC</h1>
+                    <br>
+                    <?php echo $row->number ?> disponibles
                     <br>
                     <a href="#<?php echo $row->id ?>"> Buy</a>
                 </div>
