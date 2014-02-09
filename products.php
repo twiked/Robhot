@@ -1,5 +1,6 @@
 <?php
 require_once 'db.php';
+require_once 'cart.php';
 $stmt = $db->prepare("SELECT * FROM productlist");
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $stmt->execute();
@@ -26,10 +27,7 @@ $stmt->execute();
     }
 
     #header {
-        width: 30px;
-        position: absolute;
-        right: 0px;
-        margin: 5px;
+        width: 200px;
     }
     </style>
 </head>
@@ -55,8 +53,8 @@ $stmt->execute();
                 </div>
             </div>
         </div>
-        <div id="header">
-            
+        <div id="header" class="well pull-right">
+            <b>2</b> articles <button data-art="<?php echo $row->id ?>" type="button" class="btn btn-lg btn-success">Checkout</button>
         </div>
         <div class="container">
             <?php 
