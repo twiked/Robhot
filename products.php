@@ -62,7 +62,7 @@ $stmt->execute();
                 <div class="col-md-4 center">
                     <h1><?php echo $row->price ?> BTC</h1>
                     <br>
-                    <a href="#<?php echo $row->id ?>"> Buy</a>
+                    <button data-art="<?php echo $row->id ?>" type="button" class="btn btn-lg btn-primary">Buy</button>
                 </div>
             </div> 
             <?php } ?>
