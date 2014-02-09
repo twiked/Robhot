@@ -63,7 +63,7 @@ $stmt->execute();
             while($row = $stmt->fetch()) { ?> 
             <div class="well product row">
                 <div class="col-md-4">
-                    <img class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
+                    <img alt="Product image" class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
                 </div>
                 <div class="col-md-4">
                     <h1><?php echo $row->title ?></h1>
@@ -74,7 +74,7 @@ $stmt->execute();
                     <br>
                     <?php echo $row->number ?> disponibles
                     <br>
-                    <a href="#<?php echo $row->id ?>"> Buy</a>
+                    <button data-art="<?php echo $row->id ?>" type="button" class="btn btn-lg btn-primary">Buy</button>
                 </div>
             </div> 
             <?php } ?>

@@ -7,17 +7,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$age = (int) $_POST['age'];
 	$mail = $_POST['mail'];
 
-	// Check attributes validity
-	if(True) {
-		$valid_data = True;
-	}
-
-	$stmt = $db->prepare("INSERT INTO registered_user(	firstname, lastname, age, email) VALUES (?, ?, ?, ?)");
+	$stmt = $db->prepare("INSERT INTO registered_user(firstname, lastname, age, email) VALUES (?, ?, ?, ?)");
 	$stmt->bindValue(1, $name, PDO::PARAM_STR);
 	$stmt->bindValue(2, $surname, PDO::PARAM_STR);
 	$stmt->bindValue(3, $age, PDO::PARAM_INT	);
 	$stmt->bindValue(4, $mail, PDO::PARAM_STR);
-	$stmt->execute();
+	$valid_data = $stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {
 	$valid_data = False;
