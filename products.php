@@ -53,7 +53,7 @@ $stmt->execute();
             while($row = $stmt->fetch()) { ?> 
             <div class="well product row">
                 <div class="col-md-4">
-                    <img class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
+                    <img alt="Product image" class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
                 </div>
                 <div class="col-md-4">
                     <h1><?php echo $row->title ?></h1>
