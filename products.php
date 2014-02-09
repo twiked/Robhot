@@ -1,3 +1,10 @@
+<?php
+require_once 'db.php';
+$stmt = $db->prepare("SELECT * FROM productlist");
+$stmt->setFetchMode(PDO::FETCH_OBJ);
+$stmt->execute();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +17,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
-        .product {
-            margin-top: 30px;
-        }
+    .product {
+        margin-top: 30px;
+    }
 
-        .center {
-            text-align: center;
-        }
+    .center {
+        text-align: center;
+    }
     </style>
 </head>
 <body>
@@ -42,25 +49,23 @@
             </div>
         </div>
         <div class="container">
+            <?php 
+            while($row = $stmt->fetch()) { ?> 
             <div class="well product row">
                 <div class="col-md-4">
-                    <img class="center" src="http://2.bp.blogspot.com/-2T-jEJdK6RM/T3KZBdisH3I/AAAAAAAAGMc/CGa6EtWunB0/s1600/1%2B(2).jpg" width=200 height=200>
+                    <img class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
                 </div>
                 <div class="col-md-4">
-                    <h1>Lorem</h1>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <h1><?php echo $row->title ?></h1>
+                    <p><?php echo $row->description ?></p>
                 </div>
                 <div class="col-md-4 center">
-                    <h1>9001 BTC</h1>
+                    <h1><?php echo $row->price ?> BTC</h1>
                     <br>
-                    <a href="#"> Buy</a>
+                    <a href="#<?php echo $row->id ?>"> Buy</a>
                 </div>
-            </div>
+            </div> 
+            <?php } ?>
         </div>
         <div id="push"></div>
     </div>
