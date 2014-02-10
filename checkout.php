@@ -1,15 +1,32 @@
 <?php
 require_once 'db.php';
 require_once 'cart.php';
-$stmt = $db->prepare("SELECT * FROM productlist");
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-$stmt->execute();
+
+if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
+	$inQuery = implode(',', array_fill(0, count($_SESSION['cart']), '?'));
+	$stmt = $db->prepare("SELECT * FROM productlist WHERE id IN (" . $inQuery . ')');
+	foreach ($_SESSION['cart'] as $k => $value) {
+		$stmt->bindValue(($k+1), $value);
+	}
+	$stmt->setFetchMode(PDO::FETCH_OBJ);
+	$stmt->execute();
+} elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	foreach ($_SESSION['cart'] as $val) {
+		$stmt = $db->prepare("UPDATE productlist SET number = number -1 WHERE id = ?");
+		$stmt->bindValue(1, $val);
+		$stmt->execute();
+		// Check here if checkout was successful (missing items ?)
+	}
+	$_SESSION['cart'] = array();
+	echo "You'll receive your items in TWO WEEKS. Have a nice day !";
+	die;
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RobotWithMe - Product </title>
+    <title>RobotWithMe - Checkout </title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -31,6 +48,7 @@ $stmt->execute();
     }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -55,12 +73,16 @@ $stmt->execute();
         </div>
         <div id="header" class="well pull-right">
             <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles
-            <a href="./checkout.php"><button type="button" class="btn btn-lg btn-success">Checkout</button></a>
+            <form method="post" action="./checkout.php">
+            	<input type="submit" value="Pay" class="btn btn-lg btn-success">
+            </form>
             <button id="emptyCart" type="button" class="btn btn-lg btn-danger">Empty cart</button>
         </div>
         <div class="container">
-            <?php 
-            while($row = $stmt->fetch()) { ?> 
+        	<h1 class="center">Cart</h1>
+            <?php
+            if (isset($stmt))
+            	while($row = $stmt->fetch()) { ?> 
             <div class="well product row">
                 <div class="col-md-4">
                     <img alt="Product image" class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
@@ -91,7 +113,6 @@ $stmt->execute();
 
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-
     <script type="text/javascript">
     $(document).ready(function() {
         $('.buy').click(function(){
@@ -99,16 +120,15 @@ $stmt->execute();
                 function( data ) {
                     $('#artCount').text(data);
                 }
-                )
+            )
         });
 
         $('#emptyCart').click(function(){
-            alert("void");
             $.get('./cart.php', { 'emptyCart' : 1 }, 
                 function( ) {
-                   $('#artCount').text('0');
-               }
-               )
+                    location.reload();
+                }
+            )
         });
     });
     </script>
