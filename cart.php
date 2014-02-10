@@ -1,7 +1,13 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['cart'])) {
+if ($_GET["emptyCart"] != NULL || !isset($_SESSION['cart'])) {
 	$_SESSION['cart'] = array();
-} 
+}
+
+if($_GET["addToCart"] != NULL) {
+	$_SESSION['cart'][]= (int) $_GET["addToCart"];
+	echo count($_SESSION['cart']);
+}
+
 ?>

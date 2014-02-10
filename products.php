@@ -54,7 +54,9 @@ $stmt->execute();
             </div>
         </div>
         <div id="header" class="well pull-right">
-            <b>2</b> articles <button data-art="<?php echo $row->id ?>" type="button" class="btn btn-lg btn-success">Checkout</button>
+            <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles
+            <button type="button" class="btn btn-lg btn-success">Checkout</button>
+            <button id="emptyCart" type="button" class="btn btn-lg btn-danger">Empty cart</button>
         </div>
         <div class="container">
             <?php 
@@ -72,7 +74,8 @@ $stmt->execute();
                     <br>
                     <?php echo $row->number ?> disponibles
                     <br>
-                    <button data-art="<?php echo $row->id ?>" type="button" class="btn btn-lg btn-primary">Buy</button>
+                    <button data-art="<?php echo $row->id ?>" type="button" class="buy btn btn-lg btn-primary">Buy</button>
+                    <br>
                 </div>
             </div> 
             <?php } ?>
@@ -88,5 +91,24 @@ $stmt->execute();
 
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.buy').click(function(){
+            $.get('./cart.php', { 'addToCart' : $(this).attr("data-art") }, 
+                function( data ) {
+                    $('#artCount').text(data);
+                }
+            )
+        });
+        $('#emptyCart').click(function(){
+            $.get('./cart.php', { 'addToCart' : $(this).attr("data-art") }, 
+                function( ) {
+                    $('#artCount').text('0');
+                }
+            )
+        });
+    });
+    </script>
 </body>
 </html>
