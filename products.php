@@ -25,7 +25,23 @@ $stmt->execute();
     .center {
         text-align: center;
     }
-
+    .rotate {
+	-webkit-transition-duration: 0.8s;
+	-moz-transition-duration: 0.8s;
+	-o-transition-duration: 0.8s;
+	transition-duration: 0.8s;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	-o-transition-property: -o-transform;
+	transition-property: transform;
+	overflow:hidden;
+    }  
+ 
+    .rotate:hover {
+        -webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+    }  
     #header {
         width: 200px;
     }
@@ -63,7 +79,7 @@ $stmt->execute();
             while($row = $stmt->fetch()) { ?> 
             <div class="well product row">
                 <div class="col-md-4">
-                    <img alt="Product image" class="center" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
+                    <img alt="Product image" class="center rotate" src="data:image/png;base64,<?php echo $row->imgbase64 ?>" width=200 height=200>
                 </div>
                 <div class="col-md-4">
                     <h1><?php echo $row->title ?></h1>
@@ -74,7 +90,7 @@ $stmt->execute();
                     <br>
                     <?php echo $row->number ?> disponibles
                     <br>
-                    <button data-art="<?php echo $row->id ?>" type="button" class="buy btn btn-lg btn-primary">Buy</button>
+                    <button data-art="<?php echo $row->id ?>" type="button" class="rotate buy btn btn-lg btn-primary">Buy</button>
                     <br>
                 </div>
             </div> 
@@ -103,7 +119,6 @@ $stmt->execute();
         });
 
         $('#emptyCart').click(function(){
-            alert("void");
             $.get('./cart.php', { 'emptyCart' : 1 }, 
                 function( ) {
                    $('#artCount').text('0');
