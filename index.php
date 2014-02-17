@@ -41,7 +41,7 @@
                         <li><a href="./products.php">Products</a></li>
                         <li><a href="./register.php">Register</a></li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </div>
         <div class="container">
@@ -53,6 +53,7 @@
                         <li><img src="./img/jackson.jpg" width="600" height="400" alt=""></li>
                         <li><img src="./img/gabe.jpg" width="600" height="400" alt=""></li>
                         <li><img src="./img/jackson.jpg" width="600" height="400" alt=""></li>
+                        <li><img src="./img/mindblown.gif" width="600" height="400" alt=""></li>
                     </ul>
                 </div>
 
@@ -85,6 +86,7 @@
             <div class="well">
                 <h1>Contact us</h1>
                 <p>eric@linux.com <br> 6 allée de GabeN</p>
+                <iframe width="100%" height="300" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_4983?scaleControl=0&miniMap=0&scrollWheelZoom=0&allowEdit=0"></iframe>
             </div>
         </div>
         <div id="push"></div>
