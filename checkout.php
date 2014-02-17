@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
 		// Check here if checkout was successful (missing items ?)
 	}
 	$_SESSION['cart'] = array();
-	echo "You'll receive your items in TWO WEEKS. Have a nice day !";
+	echo "You'll receive your items in TWO WEEKS. Have a nice day ! <a href='./products.php'>Return to products</a>";
 	die;
 }
 ?>
