@@ -42,11 +42,11 @@ $stmt->execute();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./about.php">RobotWithMe</a>
+                    <a class="navbar-brand" href="./">RobotWithMe</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="./about.php">About us</a></li>
+                        <li><a href="./">About us</a></li>
                         <li class="active"><a href="./products.php">Products</a></li>
                         <li><a href="./register.php">Register</a></li>
                     </ul>

@@ -17,6 +17,9 @@
             width: 100px;
             text-align: right;
         }
+        .well {
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -30,11 +33,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./about.php">RobotWithMe</a>
+                    <a class="navbar-brand" href="./">RobotWithMe</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="./about.php">About us</a></li>
+                        <li class="active"><a href="./">About us</a></li>
                         <li><a href="./products.php">Products</a></li>
                         <li><a href="./register.php">Register</a></li>
                     </ul>
@@ -71,7 +74,12 @@
             <div class="well">
                 <h1>Sponsors</h1>
                 <ul>
-                    <li>Valve</li><li>CocaCola</li><li>Doritos</li><li>Monster</li>
+                    <li>Valve</li>
+                    <li>CocaCola</li>
+                    <li>Doritos</li>
+                    <li>Monster</li>
+                    <li>OBEY</li>
+                    <li>Darty</li>
                 </ul>
             </div>
             <div class="well">

@@ -31,6 +31,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
+		.well {
+			margin-top: 30px;
+		}
 		.block {
 			margin-bottom: 8px;
 		}
@@ -64,11 +67,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="./about.php">RobotWithMe</a>
+					<a class="navbar-brand" href="./">RobotWithMe</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="./about.php">About us</a></li>
+						<li><a href="./">About us</a></li>
 						<li><a href="./products.php">Products</a></li>
 						<li class="active"><a href="./register.php">Register</a></li>
 					</ul>
