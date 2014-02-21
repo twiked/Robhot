@@ -77,6 +77,7 @@ $currentpage = "products";
                     <br>
                     <button data-art="<?php echo $row->id ?>" type="button" class="rotate buy btn btn-lg btn-primary">Buy</button>
                     <br>
+                    <input type='number' min='0' name='qty' value='1' id='qty-<?php encho $row->id?>'> 
                 </div>
             </div> 
             <?php } ?>
@@ -92,7 +93,11 @@ $currentpage = "products";
     <script type="text/javascript">
     $(document).ready(function() {
         $('.buy').click(function(){
-            $.get('./cart.php', { 'addToCart' : $(this).attr("data-art") }, 
+            if ($('qty-' + $(this).attr("data-art")) < 0){
+                alert("Invalid quantity");
+                return;
+            }
+            $.get('./cart.php', { 'id' : $(this).attr("data-art"), 'count' : $('qty-' + $(this).attr("data-art")},
                 function( data ) {
                     $('#artCount').text(data);
                 }
