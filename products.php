@@ -9,7 +9,7 @@ $stmt->execute();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RobotWithMe - Product </title>
+    <title>Aperture Science - Product </title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -58,7 +58,7 @@ $stmt->execute();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./">RobotWithMe</a>
+                    <a class="navbar-brand" href="./">Aperture Science</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">

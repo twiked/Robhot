@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RobotWithMe - About us </title>
+    <title>Aperture Science - About us </title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./">RobotWithMe</a>
+                    <a class="navbar-brand" href="./">Aperture Science</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -70,7 +70,7 @@
 
             <div class="well">
                 <h1>Who we are</h1>
-                <p>We are a ...</p>
+                <p>Aperture Science is a French created by Cave Johnson, our company is based in Lyon. We design and sell military androids for home usage</p>
             </div>
             <div class="well">
                 <h1>Sponsors</h1>

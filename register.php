@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RobotWithMe - Register </title>
+	<title>Aperture Science - Register </title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="./">RobotWithMe</a>
+					<a class="navbar-brand" href="./">Aperture Science</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
