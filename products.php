@@ -1,7 +1,7 @@
 <?php
 require_once 'db.php';
 require_once 'cart.php';
-$stmt = $db->prepare("SELECT * FROM productlist");
+$stmt = $db->prepare("SELECT id, imgbase64, title, description, price, number FROM productlist");
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $stmt->execute();
 ?>
