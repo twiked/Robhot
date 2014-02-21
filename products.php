@@ -16,38 +16,11 @@ $currentpage = "products";
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+
     <link rel="stylesheet" type="text/css" href="./css/sticky_footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/theme.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css">
-    .product {
-        margin-top: 30px;
-    }
-
-    .center {
-        text-align: center;
-    }
-    .rotate {
-	-webkit-transition-duration: 0.8s;
-	-moz-transition-duration: 0.8s;
-	-o-transition-duration: 0.8s;
-	transition-duration: 0.8s;
-	-webkit-transition-property: -webkit-transform;
-	-moz-transition-property: -moz-transform;
-	-o-transition-property: -o-transform;
-	transition-property: transform;
-	overflow:hidden;
-    }  
- 
-    .rotate:hover {
-        -webkit-transform:rotate(360deg);
-        -moz-transform:rotate(360deg);
-        -o-transform:rotate(360deg);
-    }  
-    #header {
-        width: 200px;
-    }
-    </style>
 </head>
 <body>
     <div id="wrap">
@@ -73,11 +46,13 @@ $currentpage = "products";
                 <div class="col-md-4 center">
                     <h1><?php echo $row->price ?> BTC</h1>
                     <br>
-                    <?php echo $row->number ?> disponibles
+                    <?php echo $row->number ?> available
                     <br>
                     <button data-art="<?php echo $row->id ?>" type="button" class="rotate buy btn btn-lg btn-primary">Buy</button>
                     <br>
-                    <input type='number' min='0' name='qty' value='1' id='qty-<?php encho $row->id?>'> 
+                    <input type='number' min='0' name='qty' 
+                    value='<?php if(isset($_SESSION['cart'][$row->id])) echo $_SESSION['cart'][$row->id]; else echo 0 ?>'
+                    id='qty-<?php echo $row->id ?>'> 
                 </div>
             </div> 
             <?php } ?>
@@ -90,28 +65,6 @@ $currentpage = "products";
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.buy').click(function(){
-            if ($('qty-' + $(this).attr("data-art")) < 0){
-                alert("Invalid quantity");
-                return;
-            }
-            $.get('./cart.php', { 'id' : $(this).attr("data-art"), 'count' : $('qty-' + $(this).attr("data-art")},
-                function( data ) {
-                    $('#artCount').text(data);
-                }
-                )
-        });
-
-        $('#emptyCart').click(function(){
-            $.get('./cart.php', { 'emptyCart' : 1 }, 
-                function( ) {
-                   $('#artCount').text('0');
-               }
-               )
-        });
-    });
-    </script>
+    <script type="text/javascript" src="./js/cart.js"></script>
 </body>
 </html>

@@ -6,7 +6,11 @@ if (array_key_exists ("emptyCart", $_GET) || !isset($_SESSION['cart'])) {
 }
 
 if (array_key_exists ("id", $_GET) && array_key_exists ("count", $_GET)) {
-	$_SESSION['cart'][(int) $_GET["id"]] = (int) $_GET["count"];
+	if((int) $_GET["count"] == 0) {
+		unset($_SESSION['cart'][(int) $_GET["id"]]);
+	} else {
+		$_SESSION['cart'][(int) $_GET["id"]] = (int) $_GET["count"];
+	}
 	echo count($_SESSION['cart']);
 }
 

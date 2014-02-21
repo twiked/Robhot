@@ -29,35 +29,11 @@ $currentpage = "register";
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+
+	<link rel="stylesheet" type="text/css" href="./css/theme.css">
 	<link rel="stylesheet" type="text/css" href="./css/sticky_footer.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">
-		.well {
-			margin-top: 30px;
-		}
-		.block {
-			margin-bottom: 8px;
-		}
-
-		.block input{
-			max-width: 250px;
-			width:40%;
-		}
-
-		.block label { 
-			display: inline-block; width: 100px; text-align: right;
-		}
-
-		.green {
-			color:green;
-			font-weight:bold;
-		}
-		.block .error {
-			display: inline;
-			color: red;
-		}
-	</style>
 </head>
 <body>
 	<div id="wrap">

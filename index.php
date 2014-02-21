@@ -9,20 +9,11 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="./css/sticky_footer.css">
-
     <link rel="stylesheet" type="text/css" href="./css/jcarousel.basic.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style type="text/css">
-        .block label { 
-            display: inline-block;
-            width: 100px;
-            text-align: right;
-        }
-        .well {
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/theme.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div id="wrap">
