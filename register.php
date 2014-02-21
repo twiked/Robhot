@@ -24,7 +24,7 @@ $currentpage = "register";
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RobotWithMe - Register </title>
+	<title>Aperture Science - Register </title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -61,7 +61,9 @@ $currentpage = "register";
 </head>
 <body>
 	<div id="wrap">
+
 		<?php include "header.php" ?>
+
 		<div class="container">
 			<div class="alert-success" <?php if(!$valid_data) {echo "style=\"display: none;\""; } ?>><strong>Successfully registered !</strong></div>
 			<div id="error" class="alert-success" style="display: none;"><span></span></div>

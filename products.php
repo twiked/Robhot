@@ -11,7 +11,7 @@ $currentpage = "products";
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RobotWithMe - Product </title>
+    <title>Aperture Science - Product </title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -51,6 +51,7 @@ $currentpage = "products";
 </head>
 <body>
     <div id="wrap">
+
         <?php include "header.php" ?>
 
         <div id="header" class="well pull-right">
