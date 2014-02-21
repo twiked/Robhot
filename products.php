@@ -71,7 +71,7 @@ $stmt->execute();
         </div>
         <div id="header" class="well pull-right">
             <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles
-            <a href="./checkout.php"><button type="button" class="btn btn-lg btn-success">Checkout</button></a>
+            <a href="./checkout.php"><span class="btn btn-lg btn-success">Checkout</span></a>
             <button id="emptyCart" type="button" class="btn btn-lg btn-danger">Empty cart</button>
         </div>
         <div class="container">
