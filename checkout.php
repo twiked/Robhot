@@ -18,9 +18,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
     // Client is paying
 	foreach ($_SESSION['cart'] as $id => $count) {
         // Remove articles from the shelves
+        // TODO : Check whether there is enough stock.
 		$stmt = $db->prepare("UPDATE productlist SET number = number - ? WHERE id = ?");
 		$stmt->bindValue(1, $count);
-        $stmt->bindValue(1, $id);
+        $stmt->bindValue(2, $id);
 		$stmt->execute();
 		// TODO : Check here if checkout was successful (missing items ?)
 	}

@@ -1,42 +1,49 @@
-    .product {
-        margin-top: 30px;
-    }
+.product {
+    margin-top: 30px;
+}
 
-    .center {
-        text-align: center;
-    }
+.center {
+    text-align: center;
+}
 
-    #header {
-        width: 200px;
-    }
+#header {
+    width: 200px;
+}
 
-    input {
-        width: 98px;
-    }
+input {
+    width: 98px;
+}
 
-    .block label { 
-        display: inline-block;
-        width: 100px;
-        text-align: right;
-    }
-    .well {
-        margin-top: 30px;
-    }
+.block label { 
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+.well {
+    margin-top: 30px;
+}
 
-    .block {
-        margin-bottom: 8px;
-    }
+.block {
+    margin-bottom: 8px;
+}
 
-    .block input{
-        max-width: 250px;
-        width:40%;
-    }
+.block input{
+    max-width: 250px;
+    width:40%;
+}
 
-    .green {
-        color:green;
-        font-weight:bold;
-    }
-    .block .error {
-        display: inline;
-        color: red;
-    }
+.green {
+    color:green;
+    font-weight:bold;
+}
+.block .error {
+    display: inline;
+    color: red;
+}
+
+.well img {
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
+}
