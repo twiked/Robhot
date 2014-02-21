@@ -1,7 +1,7 @@
 <?php
 
-$db_login = 'CHANGEME';
-$db_password = 'CHANGEME';
+$db_login = 'web';
+$db_password = 'web';
 
 try {
 	$db = new PDO('mysql:host=localhost;dbname=web', $db_login, $db_password);

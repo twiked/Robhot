@@ -17,6 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
 	$valid_data = False;
 }
+
+$currentpage = "register";
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +41,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 
 		.block input{
-			width: 250px;
+			max-width: 250px;
+			width:40%;
 		}
 
 		.block label { 
@@ -58,26 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 	<div id="wrap">
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="./">RobotWithMe</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="./">About us</a></li>
-						<li><a href="./products.php">Products</a></li>
-						<li class="active"><a href="./register.php">Register</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<?php include "header.php" ?>
 		<div class="container">
 			<div class="alert-success" <?php if(!$valid_data) {echo "style=\"display: none;\""; } ?>><strong>Successfully registered !</strong></div>
 			<div id="error" class="alert-success" style="display: none;"><span></span></div>
@@ -94,11 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div id="push"></div>
     </div>
 
-	<div id="footer">
-	    <div class="container">
-	    	<p class="credit">Copyright 2014 Mathieu Degaine & <a href="http://me.linuxw.info">Éric Gillet</a>.<a id="credits" href="./credits.php">Credits</a></p>
-		</div>
-	</div>
+    <?php require "footer.php" ?>
 
 	<script type="text/javascript" src="./js/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>

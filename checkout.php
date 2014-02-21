@@ -5,15 +5,16 @@ require_once 'cart.php';
 if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
 	$inQuery = implode(',', array_fill(0, count($_SESSION['cart']), '?'));
 	$stmt = $db->prepare("SELECT * FROM productlist WHERE id IN (" . $inQuery . ')');
-	foreach ($_SESSION['cart'] as $k => $value) {
-		$stmt->bindValue(($k+1), $value);
+	foreach ($_SESSION['cart'] as $id => $value) {
+		$stmt->bindValue(($k+1), $id);
 	}
 	$stmt->setFetchMode(PDO::FETCH_OBJ);
 	$stmt->execute();
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	foreach ($_SESSION['cart'] as $val) {
-		$stmt = $db->prepare("UPDATE productlist SET number = number -1 WHERE id = ?");
-		$stmt->bindValue(1, $val);
+	foreach ($_SESSION['cart'] as $id => $count) {
+		$stmt = $db->prepare("UPDATE productlist SET number = number - ? WHERE id = ?");
+		$stmt->bindValue(1, $count);
+        $stmt->bindValue(1, $id);
 		$stmt->execute();
 		// Check here if checkout was successful (missing items ?)
 	}
@@ -21,6 +22,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
 	echo "You'll receive your items in TWO WEEKS. Have a nice day ! <a href='./products.php'>Return to products</a>";
 	die;
 }
+
+$currentpage = "products";
 ?>
 
 <!DOCTYPE html>
@@ -51,26 +54,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
 
 <body>
     <div id="wrap">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="./">RobotWithMe</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="./">About us</a></li>
-                        <li class="active"><a href="./products.php">Products</a></li>
-                        <li><a href="./register.php">Register</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <?php include "header.php" ?>
+
         <div id="header" class="well pull-right">
             <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles
             <form method="post" action="./checkout.php">
@@ -98,6 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
                     <br>
                     <button data-art="<?php echo $row->id ?>" type="button" class="buy btn btn-lg btn-primary">Buy</button>
                     <br>
+                    <span><?php echo $_SESSION['cart'][$row->id] ?></span>
                 </div>
             </div> 
             <?php } ?>
@@ -105,11 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
         <div id="push"></div>
     </div>
 
-    <div id="footer">
-        <div class="container">
-            <p class="credit">Copyright 2014 Mathieu Degaine & <a href="http://me.linuxw.info">Éric Gillet</a>.<a id="credits" href="./credits.php">Credits</a></p>
-        </div>
-    </div>
+    <?php include "footer.php" ?>
 
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
