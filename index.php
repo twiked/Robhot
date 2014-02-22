@@ -28,7 +28,7 @@
                         <li><img src="./img/gabe.jpg" width="600" height="400" alt=""></li>
                         <li><img src="./img/jackson.jpg" width="600" height="400" alt=""></li>
                         <li><img src="./img/mindblown.gif" width="600" height="400" alt=""></li>
-                        <li><iframe width="599" height="337" src="//www.youtube.com/embed/GGPIQ72-2Vg" frameborder="0" allowfullscreen></iframe></li>
+                        <li><iframe width="599" height="337" src="//www.youtube.com/embed/GGPIQ72-2Vg" allowfullscreen></iframe></li>
                     </ul>
                 </div>
 
@@ -61,7 +61,7 @@
             <div class="well">
                 <h1>Contact us</h1>
                 <p>eric@linux.com <br> 6 allée de GabeN</p>
-                <iframe width="100%" height="300" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_4983?scaleControl=0&ampminiMap=0&ampscrollWheelZoom=0&ampallowEdit=0"></iframe>
+                <iframe id="map" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_4983?scaleControl=0&amp;miniMap=0&amp;scrollWheelZoom=0&amp;allowEdit=0"></iframe>
             </div>
         </div>
         <div id="push"></div>
