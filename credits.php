@@ -13,11 +13,12 @@
 </style>
 </head>
 <body>
-	<h1>Sticky footer :</h1>
+	<a href="http://ryanfait.com/sticky-footer/"><h1>Sticky footer</h1></a>
 	<p>Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
 
-	<h1>Bootstrap</h1>
-
-	<h1>jCarousel</h1>
-	<p><a href="http://sorgalla.com/jcarousel/"></a></p>
+	<a href="http://getbootstrap.com"><h1>Bootstrap</h1></a>
+	
+	<a href="http://sorgalla.com/jcarousel/"><h1>jCarousel</h1></a>
+	<a href="http://stackoverflow.com"><h1>StackOverflow</h1></a>
+	<p>And their awesome community!</p>
 </body>
