@@ -11,16 +11,18 @@ iframe {
     height:300px;
 }
 
+.product input {
+    margin-left:-4px;
+    width:68px;
+}
+
 #header {
     width: 200px;
+    margin-top:60px
 }
 
 .content {
    margin-top: 60px;
-}
-
-input {
-    width: 98px;
 }
 
 .block label { 
