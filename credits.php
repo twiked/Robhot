@@ -17,6 +17,7 @@
 	<p>Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
 
 	<a href="http://getbootstrap.com"><h1>Bootstrap</h1></a>
+	<p>Enhanced by <a href="https://github.com/Caligone/RobotWithMe/blob/master/css/bootstrap.min.css">Caligone's</a> modifications in order to comply with W3C CSS validator</p>
 	
 	<a href="http://sorgalla.com/jcarousel/"><h1>jCarousel</h1></a>
 	<a href="http://stackoverflow.com"><h1>StackOverflow</h1></a>
