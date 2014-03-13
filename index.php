@@ -22,7 +22,7 @@
 
         <div class="container content">
 
-            <div class="jcarousel-wrapper">
+            <div class="jcarousel-wrapper hidden-xs">
                 <div class="jcarousel">
                     <ul>
                         <li><img src="./img/gabe.jpg" width="600" height="400" alt=""></li>
@@ -38,7 +38,7 @@
 
                     <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
                     <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                     <p class="jcarousel-pagination">
+                    <p class="jcarousel-pagination">
                         
                     </p>
             </div>
@@ -49,13 +49,17 @@
             </div>
             <div class="well">
                 <h1>Sponsors</h1>
-                <ul>
+                <ul class="row">
+				  <div class="col-md-12">
                     <li>Valve</li>
                     <li>CocaCola</li>
                     <li>Doritos</li>
+				  </div>
+				  <div class="col-md-12">
                     <li>Monster</li>
                     <li>OBEY</li>
                     <li>Darty</li>
+				  </div>
                 </ul>
             </div>
             <div class="well">
