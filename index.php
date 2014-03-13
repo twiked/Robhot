@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="./css/sticky_footer.css">
     <link rel="stylesheet" type="text/css" href="./css/jcarousel.basic.css">
 
@@ -16,11 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+        <?php include "header.php" ?>
     <div id="wrap">
 
-        <?php include "header.php" ?>
-
-        <div class="container">
+        <div class="container content">
 
             <div class="jcarousel-wrapper hidden-xs">
                 <div class="jcarousel">

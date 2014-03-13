@@ -15,7 +15,6 @@ $currentpage = "products";
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
 
     <link rel="stylesheet" type="text/css" href="./css/sticky_footer.css">
     <link rel="stylesheet" type="text/css" href="./css/theme.css">
@@ -23,16 +22,14 @@ $currentpage = "products";
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div id="wrap">
-
         <?php include "header.php" ?>
-
+    <div id="wrap">
         <div id="header" class="well pull-right">
             <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles
             <a href="./checkout.php"><span class="btn btn-lg btn-success">Checkout</span></a>
             <button id="emptyCart" type="button" class="btn btn-lg btn-danger">Empty cart</button>
         </div>
-        <div class="container">
+        <div class="container content">
             <?php 
             while($row = $stmt->fetch()) { ?> 
             <div class="well product row">

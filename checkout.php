@@ -50,9 +50,9 @@ $currentpage = "products";
 </head>
 
 <body>
+        <?php include "header.php" ?>
     <div id="wrap">
 
-        <?php include "header.php" ?>
 
         <div id="header" class="well pull-right">
             <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles
@@ -61,7 +61,7 @@ $currentpage = "products";
             </form>
             <button id="emptyCart" type="button" class="btn btn-lg btn-danger">Empty cart</button>
         </div>
-        <div class="container">
+        <div class="container content">
         	<h1 class="center">Cart</h1>
             <?php
             if (isset($stmt))

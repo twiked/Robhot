@@ -36,11 +36,9 @@ $currentpage = "register";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<?php include "header.php" ?>
 	<div id="wrap">
-
-		<?php include "header.php" ?>
-
-		<div class="container">
+		<div class="container content">
 			<div class="alert-success" <?php if(!$valid_data) {echo "style=\"display: none;\""; } ?>><strong>Successfully registered !</strong></div>
 			<div id="error" class="alert-success" style="display: none;"><span></span></div>
 			<div class="well">
@@ -54,9 +52,10 @@ $currentpage = "register";
 			</div>
 		</div>
 		<div id="push"></div>
-    </div>
 
+    </div>
     <?php require "footer.php" ?>
+
 
 	<script type="text/javascript" src="./js/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
