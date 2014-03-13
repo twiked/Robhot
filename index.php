@@ -22,7 +22,7 @@
 
         <div class="container">
 
-            <div class="jcarousel-wrapper">
+            <div class="jcarousel-wrapper hidden-xs">
                 <div class="jcarousel">
                     <ul>
                         <li><img src="./img/gabe.jpg" width="600" height="400" alt=""></li>
