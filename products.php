@@ -36,7 +36,7 @@ $currentpage = "products";
             while($row = $stmt->fetch()) { ?> 
             <div class="well product row">
                 <div class="col-md-4">
-                    <img alt="Product image" class="center rotate" src="data:image/png;base64,<?php echo $row->imgbase64 ?>">
+                    <img alt="Product image" class="center rotate" src="<?php echo isset($row->imgbase64) ? ("data:image/png;base64," . $row->imgbase64) : "./img/not_found.png"?>">
                 </div>
                 <div class="col-md-4">
                     <h1><?php echo $row->title ?></h1>
@@ -45,7 +45,7 @@ $currentpage = "products";
                 <div class="col-md-4 center">
                     <h1><?php echo $row->price ?> BTC</h1>
                     <br>
-                    <?php echo $row->number ?> available
+                    <?php echo $row->number > 0 ? $row->number : None ?> available
                     <br>
                     <button data-art="<?php echo $row->id ?>" type="button" class="rotate buy btn btn-lg btn-primary">Buy</button>
                     <br>

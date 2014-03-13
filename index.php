@@ -49,18 +49,22 @@
             </div>
             <div class="well">
                 <h1>Sponsors</h1>
-                <ul class="row">
-				  <div class="col-md-12">
+		<div class="row">
+		<div class="col-md-6">
+                <ul>
                     <li>Valve</li>
                     <li>CocaCola</li>
                     <li>Doritos</li>
-				  </div>
-				  <div class="col-md-12">
+		</ul>
+		</div>
+		  <div class="col-md-6">
+			<ul>
                     <li>Monster</li>
                     <li>OBEY</li>
                     <li>Darty</li>
+			</ul>
 				  </div>
-                </ul>
+	</div>
             </div>
             <div class="well">
                 <h1>Contact us</h1>
