@@ -49,7 +49,7 @@ $currentpage = "register";
 					<div class="block"><label>Last Name:</label>	<input type="text" name="surname" required></div>
 					<div class="block"><label>Age:</label>			<input type="number" name="age" min="13" max="120" required></div>
 					<div class="block"><label>Email:</label>		<input type="email" name="mail" required></div>
-					<input type="submit" value="S'enregistrer">
+					<input type="submit" value="Register">
 				</form>
 			</div>
 		</div>
