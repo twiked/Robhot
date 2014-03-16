@@ -63,19 +63,6 @@ $currentpage = "register";
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="./js/additional-methods.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-		    $("#register").validate({
-		    	rules: {
-		    		name: {
-		    			lettersonly: true
-		    		},
-		    		surname: {
-		    			lettersonly: true
-		    		}
-		    	}
-		    });
-		});
-	</script>
+	<script type="text/javascript" src="./js/validate_register.js"></script>
 </body>
 </html>
