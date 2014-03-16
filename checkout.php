@@ -27,8 +27,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
     }
     // Customer "paid", empty its cart
     $_SESSION['cart'] = array();
-    echo "You'll receive your items in TWO WEEKS, thank's for your money. Have a nice day ! <a href='./products.php'>Return to products</a>";
+    echo "You'll receive your items in TWO WEEKS, thank you for your money. Have a nice day ! <a href='./products.php'>Return to products</a>";
+    //Clients will
     die;
+    //Before products arrive, hehehe
 }
 
 $currentpage = "products";
