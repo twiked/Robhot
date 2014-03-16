@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Aperture Science - Credits </title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+	<title>Aperture Science - Credits </title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
 
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.block label { display: inline-block; width: 100px; text-align: right;}
-</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<a href="http://ryanfait.com/sticky-footer/"><h1>Sticky footer</h1></a>

@@ -55,8 +55,8 @@ $currentpage = "register";
 		</div>
 		<div id="push"></div>
 
-    </div>
-    <?php require "footer.php" ?>
+	</div>
+	<?php require "footer.php" ?>
 
 
 	<script type="text/javascript" src="./js/jquery.min.js"></script>

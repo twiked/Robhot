@@ -24,7 +24,7 @@ $currentpage = "products";
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-        <?php include "header.php" ?>
+    <?php include "header.php" ?>
     <div id="wrap">
         <div id="header" class="well pull-right">
             <b id="artCount"><?php echo count($_SESSION['cart'])?></b> articles

@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-        <?php include "header.php" ?>
+    <?php include "header.php" ?>
     <div id="wrap">
 
         <div class="container content">
@@ -36,11 +36,11 @@
                     Photos by <a href="http://www.perdu.com">Internet</a>
                 </p>
 
-                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                    <p class="jcarousel-pagination">
-                        
-                    </p>
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                <p class="jcarousel-pagination">
+                    
+                </p>
             </div>
 
             <div class="well">
@@ -49,38 +49,38 @@
             </div>
             <div class="well">
                 <h1>Sponsors</h1>
-		<div class="row">
-		<div class="col-md-6">
-                <ul>
-                    <li>Valve</li>
-                    <li>CocaCola</li>
-                    <li>Doritos</li>
-		</ul>
-		</div>
-		  <div class="col-md-6">
-			<ul>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul>
+                        <li>Valve</li>
+                        <li>CocaCola</li>
+                        <li>Doritos</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                 <ul>
                     <li>Monster</li>
                     <li>OBEY</li>
                     <li>Darty</li>
-			</ul>
-				  </div>
-	</div>
-            </div>
-            <div class="well">
-                <h1>Contact us</h1>
-                <p>eric@linux.com <br> 6 allée de GabeN</p>
-                <iframe id="map" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_4983?scaleControl=0&amp;miniMap=0&amp;scrollWheelZoom=0&amp;allowEdit=0"></iframe>
+                </ul>
             </div>
         </div>
-        <div id="push"></div>
     </div>
+    <div class="well">
+        <h1>Contact us</h1>
+        <p>eric@linux.com <br> 6 allée de GabeN</p>
+        <iframe id="map" src="http://umap.openstreetmap.fr/fr/map/carte-sans-nom_4983?scaleControl=0&amp;miniMap=0&amp;scrollWheelZoom=0&amp;allowEdit=0"></iframe>
+    </div>
+</div>
+<div id="push"></div>
+</div>
 
-    <?php include "footer.php" ?>
+<?php include "footer.php" ?>
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="./js/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="./js/jcarousel.basic.js"></script>
+<script type="text/javascript" src="./js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="./js/jcarousel.basic.js"></script>
 </body>
 </html>

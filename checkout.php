@@ -9,11 +9,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
 	$inQuery = implode(',', array_fill(0, count($_SESSION['cart']), '?'));
 	$stmt = $db->prepare("SELECT * FROM productlist WHERE id IN (" . $inQuery . ')');
     $i = 1;
-	foreach ($_SESSION['cart'] as $id => $value) {
-		$stmt->bindValue(($i++), $id);
-	}
-	$stmt->setFetchMode(PDO::FETCH_OBJ);
-	$stmt->execute();
+    foreach ($_SESSION['cart'] as $id => $value) {
+      $stmt->bindValue(($i++), $id);
+  }
+  $stmt->setFetchMode(PDO::FETCH_OBJ);
+  $stmt->execute();
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Client is paying
 	foreach ($_SESSION['cart'] as $id => $count) {
@@ -22,13 +22,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && count($_SESSION['cart']) > 0) {
 		$stmt = $db->prepare("UPDATE productlist SET number = number - ? WHERE id = ?");
 		$stmt->bindValue(1, $count);
         $stmt->bindValue(2, $id);
-		$stmt->execute();
+        $stmt->execute();
 		// TODO : Check here if checkout was successful (missing items ?)
-	}
+    }
     // Customer "paid", empty its cart
-	$_SESSION['cart'] = array();
-	echo "You'll receive your items in TWO WEEKS, thank's for your money. Have a nice day ! <a href='./products.php'>Return to products</a>";
-	die;
+    $_SESSION['cart'] = array();
+    echo "You'll receive your items in TWO WEEKS, thank's for your money. Have a nice day ! <a href='./products.php'>Return to products</a>";
+    die;
 }
 
 $currentpage = "products";
@@ -52,7 +52,7 @@ $currentpage = "products";
 </head>
 
 <body>
-        <?php include "header.php" ?>
+    <?php include "header.php" ?>
     <div id="wrap">
 
 
