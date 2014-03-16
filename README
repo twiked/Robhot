@@ -1,0 +1,13 @@
+Aperture - Robhot With Me
+
+Website project for CPE Lyon
+By Mathieu Degaine & Éric Gillet
+
+To configure MySQL DB access, change 
+
+* db_host
+* db_name
+* db_login
+* db_password
+
+in file db.php
